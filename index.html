@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- ===================================================================
+       STUDENT EDIT ZONE 1 — PAGE TITLE
+       Change "Your Name" to your real name. This shows on the browser tab.
+  ==================================================================== -->
+  <title>Your Name — AI Business Operations Specialist</title>
+
+  <meta name="description" content="Portfolio of Your Name — AI Business Operations Specialist. Real consulting case study, automation, KPI dashboards and AI governance." />
+
+  <style>
+    /* ---- COLOUR PALETTE (dark slate + teal). Edit to rebrand. ---- */
+    :root {
+      --bg:      #0f172a;   /* page background (slate-900) */
+      --bg-soft: #1e293b;   /* cards (slate-800) */
+      --accent:  #5eead4;   /* teal highlight */
+      --accent-soft: rgba(45,212,191,.10);
+      --bright:  #e2e8f0;   /* headings (slate-200) */
+      --light:   #cbd5e1;   /* slate-300 */
+      --body:    #94a3b8;   /* body text (slate-400) */
+      --muted:   #64748b;   /* muted (slate-500) */
+      --line:    #334155;   /* slate-700 */
+      --radius:  14px;
+      --max:     820px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--body);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+    /* subtle spotlight glow behind the page */
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background: radial-gradient(700px at 50% -5%, rgba(94,234,212,.07), transparent 70%);
+    }
+
+    /* ---------- HERO ---------- */
+    header {
+      text-align: center;
+      padding: 56px 20px 40px;
+      background: linear-gradient(160deg, #111f3a 0%, var(--bg) 70%);
+      border-bottom: 1px solid var(--line);
+    }
+    .open-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--accent-soft); color: var(--accent);
+      font-weight: 700; font-size: .82rem;
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 18px;
+    }
+    .open-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px rgba(94,234,212,.25); }
+    header .avatar {
+      width: 116px; height: 116px; border-radius: 50%;
+      object-fit: cover; border: 4px solid var(--bg-soft);
+      box-shadow: 0 6px 22px rgba(2,12,27,.6); margin-bottom: 16px;
+    }
+    header h1 { font-size: 2rem; letter-spacing: -0.5px; color: var(--bright); }
+    header .tagline { color: var(--accent); font-weight: 700; margin-top: 6px; font-size: 1.1rem; }
+    header .subline { color: var(--body); margin-top: 8px; font-size: .98rem; }
+
+    .links { margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .links a {
+      text-decoration: none; font-size: .92rem; font-weight: 600;
+      color: var(--light); border: 1px solid var(--line); background: transparent;
+      padding: 10px 18px; border-radius: 999px; transition: all .15s ease;
+    }
+    .links a:hover { color: var(--accent); border-color: var(--accent); }
+    .links a.primary { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+    .links a.primary:hover { background: rgba(45,212,191,.18); }
+
+    /* ---------- STAT STRIP ---------- */
+    .stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 26px; }
+    .stat {
+      background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px;
+      padding: 12px 16px; min-width: 120px; text-align: center;
+    }
+    .stat b { display: block; font-size: 1.25rem; color: var(--accent); }
+    .stat span { font-size: .78rem; color: var(--muted); }
+
+    /* ---------- SECTIONS ---------- */
+    section { padding: 44px 0; border-bottom: 1px solid var(--line); }
+    section h2 { font-size: 1.35rem; margin-bottom: 8px; color: var(--bright); display: flex; align-items: center; gap: 8px; }
+    section .lead { color: var(--muted); margin-bottom: 20px; }
+    .about p { color: var(--body); font-size: 1.03rem; }
+
+    /* ---------- ROLES ---------- */
+    .roles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .role { background: var(--accent-soft); border: 1px solid rgba(94,234,212,.25); color: var(--accent);
+      padding: 7px 14px; border-radius: 999px; font-size: .88rem; font-weight: 600; }
+
+    .cv-btn {
+      display: inline-block; margin-top: 4px; color: var(--accent);
+      border: 1px solid var(--accent); text-decoration: none; font-weight: 700;
+      padding: 13px 26px; border-radius: var(--radius); transition: background .15s ease;
+    }
+    .cv-btn:hover { background: var(--accent-soft); }
+
+    /* ---------- PROJECT CARDS ---------- */
+    .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    .card {
+      position: relative; background: var(--bg-soft); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 18px; transition: border-color .15s ease, transform .15s ease;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card.star { border-color: rgba(94,234,212,.35); }
+    .card .week { font-size: .72rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .5px; }
+    .card h3 { font-size: 1.05rem; margin: 4px 0 6px; color: var(--bright); }
+    .card p { color: var(--body); font-size: .92rem; }
+    .card a {
+      display: inline-block; margin-top: 12px; font-weight: 600; font-size: .9rem;
+      color: var(--bg); background: var(--accent); padding: 8px 15px; border-radius: 9px; text-decoration: none;
+    }
+    .card a:hover { filter: brightness(1.1); }
+    .card.locked { opacity: .5; }
+    .badge {
+      display: inline-block; font-size: .72rem; font-weight: 700; margin-top: 12px;
+      background: rgba(148,163,184,.12); color: var(--muted); padding: 4px 10px; border-radius: 999px;
+    }
+    .ribbon {
+      position: absolute; top: 14px; right: 14px; font-size: .64rem; font-weight: 800;
+      background: var(--accent-soft); color: var(--accent); padding: 3px 9px; border-radius: 999px;
+      letter-spacing: .3px; text-transform: uppercase;
+    }
+
+    /* ---------- SKILLS ---------- */
+    .skillgroup { margin-bottom: 18px; }
+    .skillgroup h4 { font-size: .82rem; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin-bottom: 10px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { background: var(--accent-soft); border: 1px solid rgba(94,234,212,.22); color: var(--accent);
+      padding: 7px 13px; border-radius: 999px; font-size: .85rem; font-weight: 600; }
+
+    /* ---------- FOOTER ---------- */
+    footer { text-align: center; padding: 40px 20px 54px; color: var(--muted); font-size: .92rem; }
+    footer .cta { font-size: 1.15rem; font-weight: 700; color: var(--bright); margin-bottom: 10px; }
+    footer a { color: var(--light); text-decoration: none; font-weight: 600; }
+    footer a:hover { color: var(--accent); }
+
+    @media (min-width: 640px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+      header h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================================================================
+       STUDENT EDIT ZONE 2 — HEADER / HERO
+       - Photo: add a square photo to the repo named "me.jpg"
+       - Change your name, tagline stays, edit the one-line subline
+       - Update the 3 links (email, LinkedIn, CV)
+  ==================================================================== -->
+  <header>
+    <div class="wrap">
+      <span class="open-badge"><span class="dot"></span> Open to work</span>
+      <br />
+      <img class="avatar" src="me.jpg" alt="Your Name" onerror="this.style.display='none'" />
+      <h1>Your Name</h1>
+      <p class="tagline">AI Business Operations Specialist</p>
+      <p class="subline">I help small businesses run leaner with process mapping, automation, KPI dashboards &amp; AI governance.</p>
+
+      <div class="links">
+        <a class="primary" href="mailto:youremail@example.com">✉️ Email me</a>
+        <a href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a href="#cv">📄 My CV</a>
+      </div>
+
+      <!-- Edit these numbers as your portfolio grows -->
+      <div class="stats">
+        <div class="stat"><b>12</b><span>week AI ops training</span></div>
+        <div class="stat"><b>Live</b><span>client case study</span></div>
+        <div class="stat"><b>10</b><span>consulting deliverables</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       STUDENT EDIT ZONE 3 — ABOUT ME (aim for ~150 words)
+  ==================================================================== -->
+  <section class="about">
+    <div class="wrap">
+      <h2>👋 About Me</h2>
+      <p>
+        I'm an AI Business Operations Specialist trained through JesTech Academy, where I
+        learned to diagnose real business problems and solve them with AI and automation.
+        Across a 12-week live consulting engagement for Brightpath Health Clinic — a
+        five-location healthcare business — I audited operations, mapped processes,
+        proposed automations, built a KPI dashboard, and set up an AI governance framework.
+        <!-- Write your own ~150-word summary here. Who are you? What can you do?
+             What role are you looking for? Keep it warm and human. -->
+        I bring structure, curiosity and practical AI fluency to operations, business
+        analysis and project coordination roles — and I can show measurable value, not just
+        completed tasks.
+      </p>
+      <div class="roles" style="margin-top:18px;">
+        <span class="role">AI Operations Specialist</span>
+        <span class="role">AI Business Analyst</span>
+        <span class="role">AI Adoption Coordinator</span>
+        <span class="role">Business Operations Coordinator</span>
+        <span class="role">Operations Analyst</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       STUDENT EDIT ZONE 4 — CV
+       Upload your CV as "cv.pdf" in the repo, then this button opens it.
+  ==================================================================== -->
+  <section id="cv">
+    <div class="wrap">
+      <h2>📄 My CV</h2>
+      <p class="lead">Download my full CV as a PDF.</p>
+      <a class="cv-btn" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       STUDENT EDIT ZONE 5 — PROJECTS (the Brightpath consulting case study)
+       As you finish each week's work, UNLOCK a card:
+         1. Delete the word "locked" from  class="card locked"
+         2. Replace the <span class="badge">…</span> line with:
+            <a href="your-file.pdf" target="_blank" rel="noopener">View →</a>
+         3. Upload that PDF to the repo.
+       The Week 2 card is already unlocked as a live example.
+  ==================================================================== -->
+  <section>
+    <div class="wrap">
+      <h2>💼 Consulting Projects</h2>
+      <p class="lead">A complete, quantified case study — the Brightpath Health Clinic engagement, built week by week.</p>
+      <div class="grid">
+
+        <div class="card">
+          <div class="week">Week 2 · Operational thinking</div>
+          <h3>Brightpath Business Audit</h3>
+          <p>Diagnosed 5 operational inefficiencies and quantified the lost revenue behind each one.</p>
+          <a href="brightpath-audit.pdf" target="_blank" rel="noopener">View report →</a>
+        </div>
+
+        <div class="card locked">
+          <div class="week">Week 5 · PM fundamentals</div>
+          <h3>Project Charter</h3>
+          <p>Scope, goals, stakeholders and timeline for the Brightpath improvement project.</p>
+          <span class="badge">🔒 Coming soon</span>
+        </div>
+
+        <div class="card locked">
+          <div class="week">Week 6 · Business analysis</div>
+          <h3>Business Analysis Report</h3>
+          <p>SWOT analysis and stakeholder matrix that pinpoint root causes and opportunities.</p>
+          <span class="badge">🔒 Coming soon</span>
+        </div>
+
+        <div class="card locked">
+          <div class="week">Week 7 · Process thinking</div>
+          <h3>Process Map</h3>
+          <p>Mapped a core clinic workflow end to end to expose bottlenecks and handoffs.</p>
+          <span class="badge">🔒 Coming soon</span>
+        </div>
+
+        <div class="card locked">
+          <div class="week">Week 7 · Problem-solving</div>
+          <h3>Automation Proposal</h3>
+          <p>Proposed a workflow automation (Zapier) with projected time and cost savings.</p>
+          <span class="badge">🔒 Coming soon</span>
+        </div>
+
+        <div class="card star locked">
+          <span class="ribbon">⭐ Standout</span>
+          <div class="week">Week 7 · AI risk &amp; regulation</div>
+          <h3>AI Governance Register</h3>
+          <p>A register documenting AI risks, controls and regulatory awareness — a skill most candidates don't have.</p>
+          <span class="badge">🔒 Coming soon</span>
+        </div>
+
+        <div class="card locked">
+          <div class="week">Week 9 · Data storytelling</div>
+          <h3>Business KPI Dashboard</h3>
+          <p>A live Looker Studio dashboard tracking the metrics that matter to leadership.</p>
+          <span class="badge">🔒 Coming soon</span>
+        </div>
+
+        <div class="card star locked">
+          <span class="ribbon">⭐ Standout</span>
+          <div class="week">Week 9 · Procurement</div>
+          <h3>Vendor Evaluation Scorecard + Exec Memo</h3>
+          <p>Due-diligence scorecard comparing vendors, with an executive memo recommending a decision.</p>
+          <span class="badge">🔒 Coming soon</span>
+        </div>
+
+        <div class="card locked">
+          <div class="week">Week 10 · Communication</div>
+          <h3>Executive Presentation</h3>
+          <p>A board-ready deck presenting findings and recommendations to clinic leadership.</p>
+          <span class="badge">🔒 Coming soon</span>
+        </div>
+
+        <div class="card locked">
+          <div class="week">Week 12 · Integrated mastery</div>
+          <h3>Capstone Project</h3>
+          <p>The full Brightpath engagement, integrated into one end-to-end consulting portfolio.</p>
+          <span class="badge">🔒 Coming soon</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       STUDENT EDIT ZONE 6 — SKILLS & ASSETS
+       Keep the ones you can genuinely speak to; add anything from a
+       previous role that's relevant. Pin your strongest 3 on LinkedIn too.
+  ==================================================================== -->
+  <section>
+    <div class="wrap">
+      <h2>🧰 Skills &amp; Assets</h2>
+      <p class="lead">The toolkit behind the case study above.</p>
+
+      <div class="skillgroup">
+        <h4>Business &amp; Operations</h4>
+        <div class="chips">
+          <span class="chip">Business Process Mapping</span>
+          <span class="chip">Stakeholder Management</span>
+          <span class="chip">SWOT Analysis</span>
+          <span class="chip">Project Coordination</span>
+          <span class="chip">Change Management</span>
+          <span class="chip">Vendor Due Diligence</span>
+        </div>
+      </div>
+
+      <div class="skillgroup">
+        <h4>AI &amp; Automation</h4>
+        <div class="chips">
+          <span class="chip">AI Adoption &amp; Implementation</span>
+          <span class="chip">Workflow Automation (Zapier)</span>
+          <span class="chip">AI Governance &amp; Risk</span>
+          <span class="chip">Prompt Engineering</span>
+          <span class="chip">AI Prompt Library</span>
+          <span class="chip">AI Workflow Templates</span>
+        </div>
+      </div>
+
+      <div class="skillgroup">
+        <h4>Data &amp; Communication</h4>
+        <div class="chips">
+          <span class="chip">KPI Dashboard Design (Looker Studio)</span>
+          <span class="chip">Data-Driven Decision Making</span>
+          <span class="chip">Executive Communication</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       STUDENT EDIT ZONE 7 — FOOTER (update contact details + year)
+  ==================================================================== -->
+  <footer>
+    <div class="wrap">
+      <p class="cta">Looking for someone who can bring AI and order to your operations?</p>
+      <p>Let's talk —
+        <a href="mailto:youremail@example.com">youremail@example.com</a> ·
+        <a href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+      <p style="margin-top:10px;">© 2026 Your Name · Trained at JesTech Academy</p>
+    </div>
+  </footer>
+
+</body>
+</html>
