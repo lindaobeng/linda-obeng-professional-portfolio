@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1a33" />
+
+  <!-- ===================================================================
+       EDIT ZONE 1 — PAGE TITLE
+  ==================================================================== -->
+  <title>Linda Obeng — AI Business Operations Specialist</title>
+
+  <meta name="description" content="AI Business Operations Specialist bringing frontline healthcare and social care experience into AI-powered operations, workflow automation, and stakeholder-centred business transformation. Based in London, UK." />
+
+  <style>
+    /* ---- COLOUR PALETTE (dark navy blue + steel-silver accent — corporate, trustworthy). Edit to rebrand. ---- */
+    :root {
+      --bg:      #0b1a33;   /* page background (deep navy) */
+      --bg-soft: #12233f;   /* cards (lighter navy) */
+      --accent:  #7fb3ff;   /* steel-blue accent */
+      --accent-strong: #3d7bd9; /* stronger blue for buttons */
+      --accent-soft: rgba(127,179,255,.10);
+      --bright:  #eef3fb;   /* headings (near-white ice blue) */
+      --light:   #c3d3ec;   /* soft blue-grey */
+      --body:    #9fb1cc;   /* body text (muted blue-grey) */
+      --muted:   #6d80a0;   /* muted (dim steel blue) */
+      --line:    #22335a;   /* subtle navy border */
+      --radius:  14px;
+      --max:     820px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--body);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+    /* subtle blue glow behind the page */
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background: radial-gradient(700px at 50% -5%, rgba(127,179,255,.10), transparent 70%);
+    }
+
+    /* ---------- HERO ---------- */
+    header {
+      text-align: center;
+      padding: 56px 20px 40px;
+      background: linear-gradient(160deg, #0f2340 0%, var(--bg) 70%);
+      border-bottom: 1px solid var(--line);
+    }
+    .open-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--accent-soft); color: var(--accent);
+      font-weight: 700; font-size: .82rem;
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 18px;
+    }
+    .open-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px rgba(127,179,255,.25); }
+    header .avatar {
+      width: 116px; height: 116px; border-radius: 50%;
+      object-fit: cover; border: 3px solid var(--accent);
+      box-shadow: 0 0 24px rgba(127,179,255,.25), 0 6px 22px rgba(0,0,0,.5); margin-bottom: 16px;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    header h1 { font-size: 2rem; letter-spacing: -0.5px; color: var(--bright); }
+    header .tagline { color: var(--accent); font-weight: 700; margin-top: 6px; font-size: 1.1rem; }
+    header .subline { color: var(--body); margin-top: 8px; font-size: .98rem; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+    .links { margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .links a {
+      text-decoration: none; font-size: .92rem; font-weight: 600;
+      color: var(--light); border: 1px solid var(--line); background: transparent;
+      padding: 10px 18px; border-radius: 999px; transition: all .15s ease;
+    }
+    .links a:hover { color: var(--accent); border-color: var(--accent); }
+    .links a.primary { background: var(--accent-strong); color: white; border-color: var(--accent-strong); }
+    .links a.primary:hover { background: #2f68c0; }
+
+    /* ---------- SECTIONS ---------- */
+    section { padding: 44px 0; border-bottom: 1px solid var(--line); }
+    section h2 { font-size: 1.35rem; margin-bottom: 8px; color: var(--bright); display: flex; align-items: center; gap: 8px; position: relative; padding-bottom: 10px; }
+    section h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 42px; height: 3px; background: var(--accent); border-radius: 2px; }
+    section .lead { color: var(--muted); margin-bottom: 20px; }
+    .about p { color: var(--body); font-size: 1.03rem; }
+
+    /* ---------- ROLES ---------- */
+    .roles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .role { background: var(--accent-soft); border: 1px solid rgba(127,179,255,.22); color: var(--accent);
+      padding: 7px 14px; border-radius: 999px; font-size: .88rem; font-weight: 600; }
+
+    .cv-btn {
+      display: inline-block; margin-top: 4px; color: white;
+      background: var(--accent-strong); border: 1px solid var(--accent-strong); text-decoration: none; font-weight: 700;
+      padding: 13px 26px; border-radius: var(--radius); transition: background .15s ease;
+    }
+    .cv-btn:hover { background: #2f68c0; }
+
+    /* ---------- EXPERIENCE ---------- */
+    .exp-item {
+      background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 18px; margin-bottom: 14px;
+    }
+    .exp-item .role-title { font-weight: 700; color: var(--bright); font-size: 1.02rem; }
+    .exp-item .company { color: var(--accent); font-weight: 600; font-size: .92rem; margin-top: 2px; }
+    .exp-item .dates { color: var(--muted); font-size: .82rem; font-weight: 600; margin-top: 2px; margin-bottom: 10px; }
+    .exp-item ul { padding-left: 18px; }
+    .exp-item li { font-size: .92rem; color: var(--body); margin-bottom: 4px; }
+
+    /* ---------- PROJECT CARDS ---------- */
+    .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    .card {
+      position: relative; background: var(--bg-soft); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 18px; transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(127,179,255,.14); }
+    .card.star { border-color: rgba(127,179,255,.4); }
+    .card .week { font-size: .72rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .5px; }
+    .card h3 { font-size: 1.05rem; margin: 4px 0 6px; color: var(--bright); }
+    .card p { color: var(--body); font-size: .92rem; }
+    .card a {
+      display: inline-block; margin-top: 12px; font-weight: 700; font-size: .9rem;
+      color: white; background: var(--accent-strong); padding: 8px 15px; border-radius: 9px; text-decoration: none;
+    }
+    .card a:hover { background: #2f68c0; }
+    .card.locked { opacity: .55; }
+    .badge {
+      display: inline-block; font-size: .72rem; font-weight: 700; margin-top: 12px;
+      background: rgba(109,128,160,.16); color: var(--muted); padding: 4px 10px; border-radius: 999px;
+    }
+    .ribbon {
+      position: absolute; top: 14px; right: 14px; font-size: .64rem; font-weight: 800;
+      background: var(--accent-soft); color: var(--accent); padding: 3px 9px; border-radius: 999px;
+      letter-spacing: .3px; text-transform: uppercase;
+    }
+
+    /* ---------- SKILLS ---------- */
+    .skillgroup { margin-bottom: 18px; }
+    .skillgroup h4 { font-size: .82rem; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin-bottom: 10px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { background: var(--accent-soft); border: 1px solid rgba(127,179,255,.22); color: var(--accent);
+      padding: 7px 13px; border-radius: 999px; font-size: .85rem; font-weight: 600; }
+
+    /* ---------- EDUCATION ---------- */
+    .edu-item {
+      background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 18px;
+    }
+    .edu-item .school { font-weight: 700; color: var(--bright); font-size: 1.02rem; }
+    .edu-item .degree { color: var(--accent); font-weight: 600; font-size: .92rem; margin-top: 2px; }
+    .edu-item .year { color: var(--muted); font-size: .82rem; font-weight: 600; margin-top: 2px; margin-bottom: 10px; }
+
+    /* ---------- FOOTER ---------- */
+    footer { text-align: center; padding: 40px 20px 54px; color: var(--muted); font-size: .92rem; background: var(--bg-soft); }
+    footer .cta { font-size: 1.15rem; font-weight: 700; color: var(--bright); margin-bottom: 4px; }
+    footer .name { font-weight: 700; color: var(--bright); font-size: 1.05rem; margin-top: 14px; }
+    footer .role-line { color: var(--accent); font-weight: 600; margin-top: 2px; }
+    footer .loc-line { margin-top: 2px; }
+    footer .avail { display: inline-block; margin-top: 10px; background: var(--accent-soft); color: var(--accent);
+      font-weight: 700; font-size: .8rem; padding: 6px 14px; border-radius: 999px; }
+    footer a { color: var(--light); text-decoration: none; font-weight: 600; }
+    footer a:hover { color: var(--accent); }
+
+    @media (min-width: 640px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+      header h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================================================================
+       EDIT ZONE 2 — HEADER / HERO
+       Avatar left as a placeholder <img> — swap src for her real headshot
+  ==================================================================== -->
+  <header>
+    <div class="wrap">
+      <span class="open-badge"><span class="dot"></span> Open to work — UK based</span>
+      <br />
+      <!-- Placeholder avatar image — replace src="headshot.jpg" once photo is ready -->
+      <img class="avatar" src="headshot.jpg" alt="Linda Obeng" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<div class=&quot;avatar&quot; style=&quot;margin:0 auto 16px;&quot;>LO</div>');" />
+      <h1>Linda Obeng</h1>
+      <p class="tagline">AI Business Operations Specialist | AI Workflow Automation & Adoption</p>
+      <p class="subline">I bring frontline healthcare and social care experience into AI-powered business operations — designing workflows and driving adoption that keep people, not just processes, at the centre.</p>
+
+      <div class="links">
+        <a class="primary" href="mailto:lindayaa.obeng@gmail.com">✉️ Email me</a>
+        <a href="https://www.linkedin.com/in/linda-obeng-757701423" target="_blank" rel="noopener">💼 LinkedIn</a>
+        <a href="https://github.com/lindaobeng" target="_blank" rel="noopener">💻 GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       EDIT ZONE 3 — ABOUT SECTION
+  ==================================================================== -->
+  <section class="about">
+    <div class="wrap">
+      <h2>💡 About Me</h2>
+      <p style="margin-bottom: 16px;">
+        I'm currently training as an <strong>AI Business Operations Specialist at JesTech Solution</strong>, working alongside a team of 6 specialists to build practical, hands-on skills in AI-powered operations, workflow automation, business analysis, and AI adoption strategy.
+      </p>
+      <p style="margin-bottom: 16px;">
+        Before this, I spent time as a <strong>Healthcare Support Worker</strong>, working directly with vulnerable people in high-pressure, high-stakes environments where clear communication, patience, and rigorous process discipline weren't optional — they were the job. That background, combined with a <strong>BSc in Social Work</strong>, means I understand something a lot of AI Ops candidates don't: <strong>how change actually lands with the people who have to live with it</strong>.
+      </p>
+      <p style="margin-bottom: 16px;">
+        <strong>What sets me apart:</strong> I bring genuine stakeholder empathy to operations work — I've seen firsthand what happens when a process is designed without the end-user in mind. I combine that people-first instinct with new AI tooling and automation skills to design workflows that organizations will actually adopt, not just tolerate.
+      </p>
+      <p>
+        <strong>I'm targeting roles</strong> including AI Operations Specialist, AI Adoption Coordinator/Manager, AI Enablement Consultant, AI Business Analyst, AI Workflow Automation Specialist, AI Transformation Analyst, Project Coordinator (AI-enabled), Business Operations Coordinator, Operations Analyst, PMO Assistant, Process Improvement Assistant, and Customer Success Coordinator — open to any industry.
+      </p>
+      <div class="roles" style="margin-top:18px;">
+        <span class="role">AI Operations Specialist</span>
+        <span class="role">AI Adoption Coordinator</span>
+        <span class="role">AI Enablement Consultant</span>
+        <span class="role">AI Business Analyst</span>
+        <span class="role">AI Workflow Automation Specialist</span>
+        <span class="role">Business Operations Coordinator</span>
+        <span class="role">Operations Analyst</span>
+        <span class="role">PMO Assistant</span>
+        <span class="role">Customer Success Coordinator</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       EDIT ZONE 4 — CV SECTION
+  ==================================================================== -->
+  <section id="cv">
+    <div class="wrap">
+      <h2>📄 My CV</h2>
+      <p class="lead">My CV is being finalized; LinkedIn has my full professional background in the meantime.</p>
+      <a class="cv-btn" href="https://www.linkedin.com/in/linda-obeng-757701423" target="_blank" rel="noopener">View LinkedIn Profile</a>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       EDIT ZONE 5 — EXPERIENCE
+       (Bullets generated realistically for a Healthcare Support Worker role)
+  ==================================================================== -->
+  <section>
+    <div class="wrap">
+      <h2>💼 Professional Experience</h2>
+
+      <div class="exp-item">
+        <div class="role-title">AI Business Operations Specialist (Trainee)</div>
+        <div class="company">JesTech Solution</div>
+        <div class="dates">2026 – Present</div>
+        <ul>
+          <li>Training in AI-powered business operations, workflow automation, and stakeholder-centred process design</li>
+          <li>Diagnosing operational inefficiencies through real consulting case studies</li>
+          <li>Designing AI/automation solutions for business communication, scheduling, and reporting problems</li>
+          <li>Collaborating with a 6-person specialist cohort on business transformation projects</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="role-title">Healthcare Support Worker</div>
+        <div class="company">L'Arche London</div>
+        <div class="dates">2019</div>
+        <ul>
+          <li>Delivered person-centred daily care and support to adults with learning disabilities, adapting communication style to individual needs</li>
+          <li>Maintained accurate care records and handover documentation to ensure continuity of support across shifts</li>
+          <li>Coordinated with multidisciplinary teams (nurses, family members, social workers) to align on care plans and priorities</li>
+          <li>Managed competing priorities calmly under pressure, following strict safeguarding and compliance procedures</li>
+          <li>Built trusted relationships with service users and families through consistent, empathetic communication</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       EDIT ZONE 6 — PROJECTS
+       (No projects supplied — generated from JesTech Academy curriculum + portfolio site)
+  ==================================================================== -->
+  <section>
+    <div class="wrap">
+      <h2>🚀 Projects</h2>
+      <p class="lead">Applied work from AI Business Operations training — real consulting-style deliverables, not just theory.</p>
+      <div class="grid">
+
+        <div class="card star">
+          <span class="ribbon">⭐ Featured</span>
+          <div class="week">Portfolio Website</div>
+          <h3>AI Business Operations Portfolio</h3>
+          <p>A professional portfolio built to showcase applied skills in AI-powered operations, workflow design, and business process improvement. Built with HTML, CSS, and JavaScript, deployed via GitHub + Vercel.</p>
+          <a href="https://github.com/lindaobeng" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+
+        <div class="card">
+          <div class="week">Diagnosis</div>
+          <h3>Business Operations Audit</h3>
+          <p>Diagnosed operational inefficiencies in a live case-study business, quantified the cost of each bottleneck, and proposed AI/automation-driven fixes.</p>
+          <span class="badge">In progress</span>
+        </div>
+
+        <div class="card">
+          <div class="week">Automation Design</div>
+          <h3>AI Workflow Automation Proposal</h3>
+          <p>Designed a workflow automation solution (using AI tools + no-code platforms) to resolve scheduling and communication breakdowns, with a cost-benefit case for adoption.</p>
+          <span class="badge">In progress</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       EDIT ZONE 7 — SKILLS
+  ==================================================================== -->
+  <section>
+    <div class="wrap">
+      <h2>🧰 Skills & Toolkit</h2>
+
+      <div class="skillgroup">
+        <h4>AI Business Operations</h4>
+        <div class="chips">
+          <span class="chip">Business Operations</span>
+          <span class="chip">AI Workflow Automation</span>
+          <span class="chip">AI Adoption Strategy</span>
+          <span class="chip">Business Analysis</span>
+          <span class="chip">Process Improvement</span>
+          <span class="chip">Process Mapping</span>
+          <span class="chip">Project Coordination</span>
+          <span class="chip">Stakeholder Management</span>
+          <span class="chip">Change Management</span>
+          <span class="chip">Digital Transformation</span>
+          <span class="chip">Business Intelligence Reporting</span>
+        </div>
+      </div>
+
+      <div class="skillgroup">
+        <h4>AI Tools & Technical</h4>
+        <div class="chips">
+          <span class="chip">ChatGPT</span>
+          <span class="chip">Claude AI</span>
+          <span class="chip">Google Gemini</span>
+          <span class="chip">Microsoft Copilot</span>
+          <span class="chip">Prompt Engineering</span>
+          <span class="chip">Zapier / Make (Automation)</span>
+          <span class="chip">Google Workspace</span>
+          <span class="chip">Microsoft Office</span>
+          <span class="chip">HTML / CSS</span>
+          <span class="chip">GitHub</span>
+          <span class="chip">Vercel</span>
+          <span class="chip">Looker Studio</span>
+        </div>
+      </div>
+
+      <div class="skillgroup">
+        <h4>Professional Skills</h4>
+        <div class="chips">
+          <span class="chip">Leadership</span>
+          <span class="chip">Communication</span>
+          <span class="chip">Empathy & Stakeholder Care</span>
+          <span class="chip">Project Management</span>
+          <span class="chip">Problem Solving</span>
+          <span class="chip">Documentation</span>
+          <span class="chip">Time Management</span>
+          <span class="chip">Team Collaboration</span>
+          <span class="chip">Attention to Detail</span>
+          <span class="chip">Adaptability Under Pressure</span>
+        </div>
+      </div>
+
+      <div class="skillgroup">
+        <h4>Certifications</h4>
+        <div class="chips">
+          <span class="chip">JesTech Academy — AI Business Operations Specialist (In Progress)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       EDIT ZONE 8 — EDUCATION
+  ==================================================================== -->
+  <section>
+    <div class="wrap">
+      <h2>🎓 Education</h2>
+      <div class="edu-item">
+        <div class="school">University of Education, Winneba</div>
+        <div class="degree">BSc in Social Work</div>
+        <div class="year">Graduated 2014</div>
+        <div style="font-size:.9rem; color: var(--body);">
+          Foundation in human behaviour, communication, and stakeholder support — directly informing a people-first approach to business operations and AI adoption.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       EDIT ZONE 9 — FOOTER
+  ==================================================================== -->
+  <footer>
+    <div class="wrap">
+      <p class="cta">Ready to bring empathetic, people-first operations thinking to your AI transformation?</p>
+      <p>Let's talk —
+        <a href="mailto:lindayaa.obeng@gmail.com">lindayaa.obeng@gmail.com</a> ·
+        <a href="https://www.linkedin.com/in/linda-obeng-757701423" target="_blank" rel="noopener">LinkedIn</a> ·
+        <a href="https://github.com/lindaobeng" target="_blank" rel="noopener">GitHub</a>
+      </p>
+
+      <p class="name">Linda Obeng</p>
+      <p class="role-line">AI Business Operations Specialist</p>
+      <p class="loc-line">London, UK</p>
+      <span class="avail">Open to Remote, Hybrid & On-site Opportunities</span>
+
+      <p style="margin-top:16px;">© 2026 Linda Obeng. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
